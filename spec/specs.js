@@ -7,7 +7,7 @@ describe("Ticket", function(){
   });
 
   it("will concatonate aspects of ticket", function(){
-    var testTicket = new Ticket("Big", "6:45pm", "senior");
-    expect(testTicket.fullTicket()).to.equal("Big at 6:45pm priced for senior");
+    var testTicket = new Ticket("Big", "6:45pm", "Senior");
+    expect(testTicket.fullTicket()).to.equal(6);
   });
 });

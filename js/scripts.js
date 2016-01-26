@@ -5,7 +5,25 @@ function Ticket (movie, time, age) {
 };
 
 Ticket.prototype.fullTicket = function() {
-  return this.movie + " at " + this.time + " priced for " + this.age;
+  var total = 10;
+  if (this.age === "Senior" && (this.time === "12:00pm" || this.time === "3:00pm"))
+  {
+  total -= 6;
+} else if (this.age === "Senior"){
+  total -= 4;
+  } if (this.age === "Student" && (this.time === "12:00pm" || this.time === "3:00pm"))
+  {
+  total -= 4;
+} else if (this.age === "Student") {
+    total -= 2;
+  } if (this.age === "Adult" && (this.time === "12:00pm" || this.time === "3:00pm")) {
+    total -= 2;
+  } else if (this.age === "Adult") {
+    total = total ;
+  } if (this.age === "Toddler"){
+    total += 5
+  }
+  return total;
 };
 
 $(document).ready(function() {
@@ -13,37 +31,20 @@ $(document).ready(function() {
     var movie = $("select#movie").val();
     var time = $("select#time").val();
     var age = $("select#age").val();
+    var ticketNum = parseInt($("select#number").val());
     var newTicket = new Ticket(movie, time, age);
     var total = 10;
 
-
-    if (age === "senior" && (time === "12:00pm" || time === "3:00pm")){
-      total -= 6;
-    } else if (age === "senior"){
-      total -= 4;
-    } else if (age === "student" && (time === "12:00pm" || time === "3:00pm")) {
-      total -= 4;
-    } else if (age === "student") {
-      total -= 2;
-    } else if (age === "adult" && (time === "12:00pm" || time === "3:00pm")) {
-      total -= 2;
-    } else if (age === "adult") {
-      total = total ;
-    } else if (age === "toddler"){
-      alert("What were you thinking bringing a baby to the movie, you insensitive tool")
-      total += 5;
-    } else {
-      alert("Please fill out the ticket information");
-    };
+    var grandTotal = newTicket.fullTicket() * ticketNum;
 
       $(".display").empty();
+      $(".display").append("<li class='ticketNumli'>" + ticketNum + " ticket(s) </li>");
       $(".display").append("<li class='movieli'>" + movie + "</li>");
       $(".display").append("<li class='timeli'> At " + time + " </li>");
-      $(".display").append("<li class='agel1'> For " + age + " </li>");
-      $(".display").append("<li> Total: $" + total + "</li>");
+      $(".display").append("<li class='ageli'> For " + age + " </li>");
+      $(".display").append("<li> Total: $" + grandTotal + "</li>");
 
 
     event.preventDefault();
   });
-
 });

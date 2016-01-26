@@ -2,13 +2,17 @@
   padding-bottom: 40px;
 }
 
+body {
+  background-color: #ecf0f1;
+}
+
 .jumbotron {
   background-image: url(../img/jumbo.jpg);
   background-size: 250px;
 }
 
 .display {
-padding-top: 70px;
+padding-top: 50px;
 padding-left: 200px;
 font-size: 20px;
 list-style: none;
@@ -23,8 +27,8 @@ list-style: none;
   height: 300px;
 }
 
-.movieli, .timeli {
-  padding-bottom: 10px;
+.movieli, .timeli, .ageli, .ticketNumli {
+  padding-bottom: 5px;
 }
 
 form {
@@ -38,5 +42,5 @@ form {
 }
 
 .ticket {
-  padding-left: 10%;
+  padding-left: 17%;
 }
