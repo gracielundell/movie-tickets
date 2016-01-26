@@ -15,7 +15,9 @@ $(document).ready(function() {
     var age = $("select#age").val();
     var newTicket = new Ticket(movie, time, age);
     var total = 10;
-    if(age === "senior" && (time === "12:00pm" || time === "3:00pm")){
+
+
+    if (age === "senior" && (time === "12:00pm" || time === "3:00pm")){
       total -= 6;
     } else if (age === "senior"){
       total -= 4;
@@ -27,16 +29,19 @@ $(document).ready(function() {
       total -= 2;
     } else if (age === "adult") {
       total = total ;
-    } else {
+    } else if (age === "toddler"){
       alert("What were you thinking bringing a baby to the movie, you insensitive tool")
       total += 5;
-    }
+    } else {
+      alert("Please fill out the ticket information");
+    };
 
-    $(".display").empty();
-    $(".display").append("<li class='movieli'>" + movie + "</li>");
-    $(".display").append("<li class='timeli'> At " + time + " </li>");
-    $(".display").append("<li class='agel1'> For " + age + " </li>");
-    $(".display").append("<li> Total: $" + total + "</li>")
+      $(".display").empty();
+      $(".display").append("<li class='movieli'>" + movie + "</li>");
+      $(".display").append("<li class='timeli'> At " + time + " </li>");
+      $(".display").append("<li class='agel1'> For " + age + " </li>");
+      $(".display").append("<li> Total: $" + total + "</li>");
+
 
     event.preventDefault();
   });
