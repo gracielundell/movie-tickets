@@ -2,11 +2,17 @@
   padding-bottom: 40px;
 }
 
+.jumbotron {
+  background-image: url(../img/jumbo.jpg);
+  background-size: 250px;
+}
+
 .display {
-padding-top: 50px;
-padding-left: 100px;
+padding-top: 70px;
+padding-left: 200px;
 font-size: 20px;
 list-style: none;
+
 }
 
 .backgroundimg {
@@ -15,4 +21,18 @@ list-style: none;
   background-repeat: no-repeat;
   width: 900px;
   height: 300px;
+}
+
+.movieli, .timeli {
+  padding-bottom: 10px;
+}
+
+form {
+  padding-bottom: 25px;
+}
+
+.jumbotron h1 {
+  text-shadow: 10px 10px 20px black;
+  text-align: center;
+  color: white;
 }
