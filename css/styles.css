@@ -1,0 +1,18 @@
+.col-sm-4 {
+  padding-bottom: 40px;
+}
+
+.display {
+padding-top: 50px;
+padding-left: 100px;
+font-size: 20px;
+list-style: none;
+}
+
+.backgroundimg {
+  background-image: url(../img/ticket.png);
+  background-size: 600px;
+  background-repeat: no-repeat;
+  width: 900px;
+  height: 300px;
+}
