@@ -43,7 +43,7 @@ $(document).ready(function() {
       $(".display").append("<li class='timeli'> At " + time + " </li>");
       $(".display").append("<li class='ageli'> For " + age + " </li>");
       $(".display").append("<li> Total: $" + grandTotal + "</li>");
-
+      $(".ticket").show();
 
     event.preventDefault();
   });
